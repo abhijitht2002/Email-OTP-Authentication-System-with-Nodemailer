@@ -21,7 +21,7 @@ const register = async (req, res) => {
     res.status(201).json({ message: "Account created successfully" });
   } catch (error) {
     console.log("Can't register", error);
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json({ message: "Server error", error: error });
   }
 };
 
@@ -50,7 +50,7 @@ const generateOTP = async (req, res) => {
 
   } catch (error) {
     console.log("Can't generate OTP", error);
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json({ message: "Server error", error: error });
   }
 }
 
@@ -74,7 +74,7 @@ const verifyOTP = async (req, res) => {
 
   } catch (error) {
     console.log("OTP verification failed", error);
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json({ message: "Server error", error: error });
   }
 }
 

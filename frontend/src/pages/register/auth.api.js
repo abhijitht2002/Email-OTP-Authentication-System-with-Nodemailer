@@ -6,7 +6,7 @@ export const generate = async (email) => {
     try {
 
         const res = await axios.post(`${baseurl}/api/auth/generateOTP`, { email })
-
+        console.log(res)
         return res.data
 
     } catch (error) {
