@@ -45,7 +45,12 @@ const generateOTP = async (req, res) => {
 
     await user.save()
 
-    await sentMail(email, otp)
+    try {
+      await sentMail(email, otp)
+    } catch (mailError) {
+      console.error("MAIL FAILED:", mailError);
+    }
+
     res.status(200).json({ message: "OTP sent to mail" })
 
   } catch (error) {
