@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.use(cors(
   {
-    origin: "https://email-otp-authentication-system-wit.vercel.app/",
+    origin: "https://email-otp-authentication-system-wit.vercel.app",
   }
 ));
 
