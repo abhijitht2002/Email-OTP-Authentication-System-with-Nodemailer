@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const baseurl = "http://localhost:3000"
+const baseurl = "https://email-otp-authentication-system-with.onrender.com"
 
 export const generate = async (email) => {
     try {
