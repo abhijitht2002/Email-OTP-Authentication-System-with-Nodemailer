@@ -10,7 +10,11 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors());
+app.use(cors(
+  {
+    origin: "https://email-otp-authentication-system-wit.vercel.app/",
+  }
+));
 
 const connectDB = async () => {
   try {
@@ -25,5 +29,5 @@ connectDB();
 app.use("/api/auth", authRoute)
 
 app.listen(process.env.PORT, () => {
-  console.log(`Server is running on port http://localhost:${process.env.port}`);
+  console.log(`Server is running on port http://localhost:${process.env.PORT}`);
 });
