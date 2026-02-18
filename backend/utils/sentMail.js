@@ -14,6 +14,9 @@ const transporter = nodemailer.createTransport({
 
 const sentMail = async (email, otp) => {
     try {
+        console.log("EMAIL_USER:", process.env.EMAIL_USER);
+        console.log("EMAIL_PASSWORD exists:", !!process.env.EMAIL_PASSWORD);
+
         const info = await transporter.sendMail({
             from: process.env.EMAIL_USER,
             to: email,
