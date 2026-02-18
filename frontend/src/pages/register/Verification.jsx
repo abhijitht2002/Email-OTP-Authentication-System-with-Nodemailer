@@ -38,7 +38,7 @@ function Verification() {
       if (!email) return console.log("Please enter email");
 
       const res = await generate(email);
-      console.log(res);
+      console.log("API Response:", res);
 
       if (res?.message === "OTP sent to mail") {
         setTimeLeft(600);

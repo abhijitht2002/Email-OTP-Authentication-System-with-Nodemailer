@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const baseurl = "https://email-otp-authentication-system-with.onrender.com"
+const baseurl = import.meta.env.VITE_API_URL
 
 export const generate = async (email) => {
     try {
@@ -10,6 +10,8 @@ export const generate = async (email) => {
         return res.data
 
     } catch (error) {
+        console.log(error);
+
         return error.response?.data?.message || "Something went wrong"
     }
 }
