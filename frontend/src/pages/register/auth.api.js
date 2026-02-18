@@ -12,7 +12,7 @@ export const generate = async (email) => {
     } catch (error) {
         console.log(error);
 
-        return error.response?.data?.message || "Something went wrong"
+        return { message: error.response?.data?.message || "Something went wrong" }
     }
 }
 
